@@ -1,0 +1,17 @@
+appdirs==1.4.3
+certifi==2019.9.11
+chardet==3.0.4
+Click==7.0
+idna==2.8
+kamene==0.32
+lanscan==0.9.5
+netaddr==0.7.19
+netifaces==0.10.9
+nmap==0.0.1
+python-nmap==0.6.1
+PyYAML==5.1.2
+requests==2.22.0
+scapy==2.4.3
+scapy-python3==0.26
+texttable==1.6.2
+urllib3==1.25.7
