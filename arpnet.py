@@ -14,13 +14,7 @@ def send_email():
     sender_email = Config.MAIL_USERNAME
     receiver_email = Config.MAIL_RECEIVER  # receiver address
     password = Config.MAIL_PASSWORD
-    message = """\
-    Subject: Hi teveliai
-
-    This message is sent from PS4. Lukas turned on me. Paskambink jam ir primink apie laiko limita.\
-    
-    PS4
-    """
+    message = Config.MAIL_MESSAGE
 
     context = ssl.create_default_context()
     with smtplib.SMTP_SSL(smtp_server, port, context=context) as server:
