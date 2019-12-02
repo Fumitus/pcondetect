@@ -10,12 +10,12 @@ class Config:
     MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD')
     MAIL_MESSAGE = os.environ.get('MAIL_MESSAGE') or \
     """\
-    Subject: Hi teveliai
+    Subject: Labas teveliai
 
-    This message is sent from PS4. Lukas turned on me. Paskambink jam ir primink apie laiko limita.\
+    Lukas isijunge PS4. Paskambink jam ir primink apie laiko limita.\
     
     PS4
     """
     MAIL_RECEIVER = os.environ.get('MAIL_RECEIVER')
-    LOOK_FOR_IP = os.environ.get('LOOK_FOR_IP') or '192.168.1.254'
+    LOOK_FOR_IP = os.environ.get('LOOK_FOR_IP')
 
