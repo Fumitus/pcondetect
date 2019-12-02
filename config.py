@@ -18,4 +18,5 @@ class Config:
     """
     MAIL_RECEIVER = os.environ.get('MAIL_RECEIVER')
     LOOK_FOR_IP = os.environ.get('LOOK_FOR_IP')
+    LOOK_FOR_MAC = os.environ.get('LOOK_FOR_MAC')
 

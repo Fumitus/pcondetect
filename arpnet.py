@@ -19,14 +19,16 @@ def send_email():
     context = ssl.create_default_context()
     with smtplib.SMTP_SSL(smtp_server, port, context=context) as server:
         server.login(sender_email, password)
-        server.sendmail(sender_email, receiver_email, message)
+        server.sendmail(sender_email, receiver_email.split(','), message)
 
 
 def main():
     # IP address to look for
     address = Config.LOOK_FOR_IP
+    # MAC address is present
+    mac_address = Config.LOOK_FOR_MAC
     res = str(subprocess.run(['arp', '-a'], capture_output=True))
-    if address in res:
+    if address and mac_address in res:
         send_email()
 
 
