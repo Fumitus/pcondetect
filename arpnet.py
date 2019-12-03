@@ -1,4 +1,5 @@
 import subprocess
+import datetime
 import smtplib, ssl
 from config import Config
 
@@ -12,7 +13,11 @@ def send_email():
 
     # your address
     sender_email = Config.MAIL_USERNAME
-    receiver_email = Config.MAIL_RECEIVER  # receiver address
+
+    # receiver address
+    receiver_email = Config.MAIL_RECEIVER
+
+    # sender mail configuration
     password = Config.MAIL_PASSWORD
     message = Config.MAIL_MESSAGE
 
@@ -22,7 +27,7 @@ def send_email():
         server.sendmail(sender_email, receiver_email.split(','), message)
 
 
-def main():
+def arp_a():
     # IP address to look for
     address = Config.LOOK_FOR_IP
     # MAC address is present
@@ -30,9 +35,5 @@ def main():
     res = str(subprocess.run(['arp', '-a'], capture_output=True))
     if address and mac_address in res:
         send_email()
-
-
-if __name__ == '__main__':
-    main()
-
-
+    else:
+        print("PC was off:" + ' ' + str(datetime.datetime.now()))
