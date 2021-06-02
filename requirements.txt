@@ -14,4 +14,4 @@ requests==2.22.0
 scapy==2.4.3
 scapy-python3==0.26
 texttable==1.6.2
-urllib3==1.25.7
+urllib3==1.26.5
